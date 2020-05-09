@@ -4,23 +4,22 @@ namespace App\Library;
 
 class Shelf
 {
-    private $books = [];  // Set empty $books array
 
-    public function addBook(Book $book): Shelf
+    public function __construct() // Using collections
     {
-        $this->books[] = $book; // Add a new book to $books array 
+        $this->books = collect(); // Set collection in __construct
+    }
+
+    public function addBook($book)
+    {
+        $this->books->push($book);
         return $this;
     }
 
-
-    public function titles(): array
+    public function titles()
     {
-        $names = [];  // Use a different name than "titles"
-
-        foreach ($this->books as $book) {
-            $names[] = $book->getTitle();
-        }
-
-        return $names;
+        return $this->books->map(function ($book) {  //Equivalent of array loop
+            return $book->title();
+        })->all();
     }
 }

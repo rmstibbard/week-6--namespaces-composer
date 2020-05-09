@@ -14,7 +14,7 @@ class Book
         $this->pages = $pages;
     }
 
-    public function read($value): int
+    public function read(int $value): int
     {
         $this->current += $value;
         return $this->current;
@@ -25,7 +25,7 @@ class Book
         return $this->current;
     }
 
-    public function getTitle(): string
+    public function title(): string
     {
         return $this->title;
     }

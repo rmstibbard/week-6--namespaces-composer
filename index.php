@@ -127,12 +127,14 @@ dump($badLibrary->titles()); // array:5 [ 0 => "Zero: The Biography of a Dangero
 
 Use the class as follows in your index.php: */
 
-// echo "\nTricksy Question 1\n";
+echo "\nTricksy Question 1\n";
 
-// use App\People\Person as Peep;  // Alias for class
+use App\People\Person as Peep;  // Alias for class
 
-// $alfred = new Peep("Alfred", "1967-04-03");
-// $jasmine = new Peep("Jasmine", "1954-12-28");
-// $walker = new Peep("Walker", "1994-01-12");
+use function PHPSTORM_META\map;
 
-// dump(Peep::getAges([$alfred, $jasmine, $walker])); // [52, 65, 15] (or there abouts)
+$alfred = new Peep("Alfred", "1967-04-03");
+$jasmine = new Peep("Jasmine", "1954-12-28");
+$walker = new Peep("Walker", "1994-01-12");
+
+dump(Peep::getAges([$alfred, $jasmine, $walker])); // [52, 65, 15] (or there abouts)
