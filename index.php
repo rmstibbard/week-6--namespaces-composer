@@ -131,8 +131,6 @@ echo "\nTricksy Question 1\n";
 
 use App\People\Person as Peep;  // Alias for class
 
-use function PHPSTORM_META\map;
-
 $alfred = new Peep("Alfred", "1967-04-03");
 $jasmine = new Peep("Jasmine", "1954-12-28");
 $walker = new Peep("Walker", "1994-01-12");

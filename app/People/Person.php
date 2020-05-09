@@ -19,11 +19,11 @@ class Person
     public function __construct($name, $birthday)
     {
         $this->name = $name;
-        $this->birthday = new Carbon($birthday);
+        $this->birthday = new Carbon($birthday); // Carbon provides for easy manipulation of dates/times
     }
 
     public function age()
     {
-        return $this->birthday->age;
+        return $this->birthday->age; // Carbon method - gets age now based on date of value in property
     }
 }
